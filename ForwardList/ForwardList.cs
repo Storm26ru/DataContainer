@@ -22,6 +22,16 @@ namespace ForwardList
 		{
 			Head = new Element(Data) { pNext = Head };
 		}
+		public void push_back(int Data)
+        {
+			if (Head == null) push_front(Data);
+			else
+			{
+				Element Temp = Head;
+				while (Temp.pNext != null) Temp = Temp.pNext;
+			    Temp.pNext = new Element(Data);
+			}
+        }
 		public void Print()
 		{
 			Element Temp = Head; // Temp это итератор.
