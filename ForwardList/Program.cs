@@ -26,6 +26,11 @@ namespace ForwardList
 			int value = Convert.ToInt32(Console.ReadLine());
 			List.insert(value, index);
 			List.Print();
+			Console.Write("Введите индекс удоляемого элемента: ");
+			index = Convert.ToInt32(Console.ReadLine());
+			List.erase(index);
+			List.Print();
+
 			
 		}
 	}

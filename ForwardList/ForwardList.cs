@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
+
 
 namespace ForwardList
 {
@@ -40,7 +42,6 @@ namespace ForwardList
 		public void insert(int Data,int Index)
 		{
 			if (Index > Size) return;
-			Console.WriteLine($"{Size}");
 			if (Index == 0) push_front(Data);
 			else 
 			{
@@ -79,6 +80,19 @@ namespace ForwardList
 
 			}
 		}
+		public void erase(int Index)
+        {
+			if (Head == null) return;
+			if (Index==0) pop_front();
+			else
+            {
+				Element Temp = Head;
+				for (int i = 0; i < Index - 1; i++) Temp = Temp.pNext;
+				if (Temp.pNext == null) pop_back();
+				else Temp.pNext = Temp.pNext.pNext;
+				Size--;
+            }
+        }
 
 	}
 }
