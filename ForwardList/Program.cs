@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections;
 
 namespace ForwardList
 {
@@ -14,7 +12,7 @@ namespace ForwardList
 			Random rand = new Random(0);
 			Console.Write("Введите размер списка ");
 			int n = Convert.ToInt32(Console.ReadLine());
-			ForwardList List = new ForwardList();
+			ForwardList List = new ForwardList() {1,2,3,4,5 };
 			for (int i = 0; i < n; i++)
 			{
 				List.push_front(rand.Next(100));

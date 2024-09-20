@@ -14,7 +14,7 @@ namespace ForwardList
 		public uint Size { get; private set; }
 		int index = -1;
 		public object Current { get => Data(index); }
-
+		
 		public ForwardList()
 		{
 			Head = null;
@@ -43,7 +43,7 @@ namespace ForwardList
         {
 			index = -1;
         }
-		public int Data(int Index)
+		int Data(int Index)
 		{
 			Element Temp = Head;
 			if (Index == 0) return Temp.Data; 
