@@ -8,10 +8,11 @@ using System.Collections;
 
 namespace ForwardList
 {
-	class ForwardList
+	class ForwardList : IEnumerable, IEnumerator
 	{
 		Element Head;
 		public uint Size { get; private set; }
+		public object Current { get=>???????}
 
 		public ForwardList()
 		{
@@ -23,6 +24,20 @@ namespace ForwardList
 		{
 			Console.WriteLine($"LDestructor:\t{GetHashCode()}");
 		}
+		public IEnumerator GetEnumerator()
+        {
+			return this;
+        }
+		public bool MoveNext()
+        {
+
+			return true;
+        }
+		public void Reset()
+        {
+
+        }
+		
 		public void push_front(int Data)
 		{
 			Head = new Element(Data) { pNext = Head };
