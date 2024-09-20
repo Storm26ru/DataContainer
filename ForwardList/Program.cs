@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace ForwardList
 {
@@ -18,18 +19,23 @@ namespace ForwardList
 			{
 				List.push_front(rand.Next(100));
 			}
-			List.Print();
+			//List.Print();
+			foreach(int i in List)
+			{
+				Console.Write(i + "\t");
+			}
+			Console.WriteLine();
 
-			Console.Write("Введите индекс добавляемого элемента: ");
-			int index = Convert.ToInt32(Console.ReadLine());
-			Console.Write("Введите значение добавляемого элемента: ");
-			int value = Convert.ToInt32(Console.ReadLine());
-			List.insert(value, index);
-			List.Print();
-			Console.Write("Введите индекс удоляемого элемента: ");
-			index = Convert.ToInt32(Console.ReadLine());
-			List.erase(index);
-			List.Print();
+			//Console.Write("Введите индекс добавляемого элемента: ");
+			//int index = Convert.ToInt32(Console.ReadLine());
+			//Console.Write("Введите значение добавляемого элемента: ");
+			//int value = Convert.ToInt32(Console.ReadLine());
+			//List.insert(value, index);
+			//List.Print();
+			//Console.Write("Введите индекс удоляемого элемента: ");
+			//index = Convert.ToInt32(Console.ReadLine());
+			//List.erase(index);
+			//List.Print();
 
 			
 		}

@@ -12,7 +12,8 @@ namespace ForwardList
 	{
 		Element Head;
 		public uint Size { get; private set; }
-		public object Current { get=>???????}
+		int index = -1;
+		public object Current { get => Data(index); }
 
 		public ForwardList()
 		{
@@ -30,13 +31,28 @@ namespace ForwardList
         }
 		public bool MoveNext()
         {
-
+			if(index == Size-1)
+			{
+				Reset();
+				return false;
+			}
+			index++;
 			return true;
         }
 		public void Reset()
         {
-
+			index = -1;
         }
+		public int Data(int Index)
+		{
+			Element Temp = Head;
+			if (Index == 0) return Temp.Data; 
+			else
+			{
+				for (int i = 0; i < Index; i++) Temp = Temp.pNext;
+				return Temp.Data;
+			}
+		}
 		
 		public void push_front(int Data)
 		{
