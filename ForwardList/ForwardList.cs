@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +11,8 @@ namespace ForwardList
 	class ForwardList : IEnumerable, IEnumerator
 	{
 		Element Head;
-		public uint Size { get; private set; }
 		int index = -1;
+		public uint Size { get; private set; }
 		public object Current { get => Data(index); }
 		
 		public ForwardList()
@@ -53,7 +53,16 @@ namespace ForwardList
 				return Temp.Data;
 			}
 		}
-		
+		public void Add(int Data)
+        {
+			push_back(Data);
+        }
+		public void Clear()
+        {
+			while (Head != null) pop_back();
+			Head = null;
+        }
+		//						Adding elements:
 		public void push_front(int Data)
 		{
 			Head = new Element(Data) { pNext = Head };
@@ -82,16 +91,7 @@ namespace ForwardList
 				Size++;
 			}
 		}
-		public void Print()
-		{
-			Element Temp = Head; // Temp это итератор.
-			while (Temp != null)
-			{
-				Console.Write($"{Temp.Data}\t");
-				Temp = Temp.pNext; // Переход на следующий элемент.
-			}
-			Console.WriteLine();
-		}
+		//						Removing elements:
 		public void pop_front()
 		{
 			Element Temp = Head;
@@ -124,6 +124,17 @@ namespace ForwardList
 				Size--;
             }
         }
+		//						Methods:
+		public void Print()
+		{
+			Element Temp = Head; // Temp это итератор. Итератор это указатель при помощи которого можно получить доступ к элементам
+			while (Temp != null)
+			{
+				Console.Write($"{Temp.Data}\t");
+				Temp = Temp.pNext; // Переход на следующий элемент.
+			}
+			Console.WriteLine();
+		}
 
 	}
 }
